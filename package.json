@@ -1,0 +1,9 @@
+{
+  "name": "mithril-table",
+  "version": "0.0.0",
+  "description": "mithril-table",
+  "main": "server.js",
+  "author": {
+    "name": "cpittman"
+  }
+}

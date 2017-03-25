@@ -1,0 +1,154 @@
+﻿@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+.mithril-table-container {
+    table {
+        table-layout: fixed;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .table-scrollable {
+        display: block;
+        position: relative;
+        @include box-sizing(border-box);
+        overflow: hidden;
+        word-break: break-all;
+        word-wrap: break-word;
+
+        .table-area {
+            height: 100%;
+            overflow: auto;
+
+            table {
+                margin-bottom: 0;
+        
+                thead {
+                    display: table;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #eeeeee;
+
+                    th {
+                        user-select: none; /* CSS3 (little to no support) */
+                        -ms-user-select: none; /* IE 10+ */
+                        -moz-user-select: none; /* Gecko (Firefox) */
+                        -webkit-user-select: none; /* Webkit (Safari, Chrome) */
+                        border-bottom: none;
+                    }
+                }
+
+                &.table-data {
+                    a.btn, button {
+                        margin-right: .5em;
+                    }
+                }
+            }
+        }
+
+        th:last-child, col:last-child {
+            width: auto;
+        }
+
+        table tr {
+            th {
+                padding: 0 5px;
+                border-top: none;
+                border-right: 1px gray dotted;
+
+                div {
+                    padding: 8px 5px;
+                }
+           }
+        }
+
+        th:not(.disabled) div {
+            cursor: pointer;
+        }
+
+        &.table-no-edit table tr th {
+            cursor: default;
+
+            div {
+                cursor: default;
+            }
+        }
+
+        td div {
+            overflow: hidden;
+        }
+
+        .table-loading-error div {
+            margin: 5px;
+
+            &.table-loading-error-message {
+                color: #FF0039;
+            }
+        }
+    }
+
+    .table-spinner {
+        margin: 0 auto;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        font-size: 10px;
+
+        div {
+            background-color: #7BAFD4;
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+            margin-left: 5px;
+  
+            -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+            animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        }
+
+        .rect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+
+        .rect3 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        .rect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+
+        .rect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+
+        @-webkit-keyframes sk-stretchdelay {
+            0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+            20% { -webkit-transform: scaleY(1.0) }
+        }
+
+        @keyframes sk-stretchdelay {
+            0%, 40%, 100% { 
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }  
+            20% { 
+                transform: scaleY(1.0);
+                -webkit-transform: scaleY(1.0);
+            }
+        }
+    }
+}

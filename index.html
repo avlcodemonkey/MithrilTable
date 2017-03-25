@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Table.css" />
+    <title>MithrilTable</title>
+</head>
+<body>
+    <div id="tableContainer" class="p-1"></div>
+
+    <script type="text/javascript" src="https://unpkg.com/mithril/mithril.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+    <script type="text/javascript" src="fecha.js"></script>
+    <script type="text/javascript" src="core.js"></script>
+    <script type="text/javascript" src="TableState.js"></script>
+    <script type="text/javascript" src="Table.js"></script>
+
+    <script type="text/javascript">
+        TableState.init({
+            id: 'pagedTest',
+            url: 'data.json',
+            loadAllData: true,
+            headerButtons: [m('a', { className: 'btn btn-primary', href: 'http://www.google.com', target: '_blank' }, 'Test')],
+            columns: [
+                { field: 'ID', label: 'ID', sortable: false, dataType: 'int' },
+                { field: 'Name', label: 'Name', dataType: 'string' },
+                { field: 'Phone', label: 'Phone', dataType: 'string' },
+                { field: 'Email', label: 'Email', dataType: 'string' },
+                { field: 'Birthdate', label: 'Birthdate', dataType: 'date' },
+                { field: 'LastAccess', label: 'Last Access', dataType: 'date' },
+                { field: 'Rating', label: 'Rating', dataType: 'int' },
+                { field: 'Done', label: 'Done', dataType: 'string' },
+                { field: 'Salary', label: 'Salary', dataType: 'currency' },
+                { field: 'Score', label: 'Score', dataType: 'int' }
+            ]
+        });
+
+        var container = $.get('#tableContainer');
+        m.mount(container, Table);
+    </script>
+</body>
+</html>

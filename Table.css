@@ -1,0 +1,103 @@
+﻿.mithril-table-container table {
+  table-layout: fixed; }
+
+.mithril-table-container .text-center {
+  text-align: center; }
+
+.mithril-table-container .text-right {
+  text-align: right; }
+
+.mithril-table-container .table-scrollable {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word; }
+  .mithril-table-container .table-scrollable .table-area {
+    height: 100%;
+    overflow: auto; }
+    .mithril-table-container .table-scrollable .table-area table {
+      margin-bottom: 0; }
+      .mithril-table-container .table-scrollable .table-area table thead {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #eeeeee; }
+        .mithril-table-container .table-scrollable .table-area table thead th {
+          user-select: none;
+          /* CSS3 (little to no support) */
+          -ms-user-select: none;
+          /* IE 10+ */
+          -moz-user-select: none;
+          /* Gecko (Firefox) */
+          -webkit-user-select: none;
+          /* Webkit (Safari, Chrome) */
+          border-bottom: none; }
+      .mithril-table-container .table-scrollable .table-area table.table-data a.btn, .mithril-table-container .table-scrollable .table-area table.table-data button {
+        margin-right: .5em; }
+  .mithril-table-container .table-scrollable th:last-child, .mithril-table-container .table-scrollable col:last-child {
+    width: auto; }
+  .mithril-table-container .table-scrollable table tr th {
+    padding: 0 5px;
+    border-top: none;
+    border-right: 1px gray dotted; }
+    .mithril-table-container .table-scrollable table tr th div {
+      padding: 8px 5px; }
+  .mithril-table-container .table-scrollable th:not(.disabled) div {
+    cursor: pointer; }
+  .mithril-table-container .table-scrollable.table-no-edit table tr th {
+    cursor: default; }
+    .mithril-table-container .table-scrollable.table-no-edit table tr th div {
+      cursor: default; }
+  .mithril-table-container .table-scrollable td div {
+    overflow: hidden; }
+  .mithril-table-container .table-scrollable .table-loading-error div {
+    margin: 5px; }
+    .mithril-table-container .table-scrollable .table-loading-error div.table-loading-error-message {
+      color: #FF0039; }
+
+.mithril-table-container .table-spinner {
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px; }
+  .mithril-table-container .table-spinner div {
+    background-color: #7BAFD4;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    margin-left: 5px;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out; }
+  .mithril-table-container .table-spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s; }
+  .mithril-table-container .table-spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s; }
+  .mithril-table-container .table-spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s; }
+  .mithril-table-container .table-spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s; }
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4); }
+  20% {
+    -webkit-transform: scaleY(1); } }
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4); }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1); } }
+
