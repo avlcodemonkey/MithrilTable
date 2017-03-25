@@ -3,7 +3,7 @@
 MithrilTable is a component for presenting ajax data in a table format. It uses the mithril.js virtual DOM engine to render content with exception performance.
 
 ### Demo
-Demo available [here](./index.html).
+Demo available [here](https://avlcodemonkey.github.io/MithrilTable/).
 
 ### Features
 * Loads JSON data from a remote URL to populate the table. Load the entire dataset at once, or request data in pages.
